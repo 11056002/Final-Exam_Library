@@ -1,0 +1,61 @@
+<!DOCTYPE html
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class = "container-fluid">
+            {% include "header.html" %}
+            <div class ="row">
+                <div class = "col-sm-3 col-md-3">
+                    <div class ="card">
+                        <div class ="card-header">
+                            <h3>MENU</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <a href = "/" class="list-group-item">HOME</a>
+                                <a href = "https://news.google.com/" class="list-group-item">Google</a>
+                                <a href = "https://www.youtube.com/" class="list-group-item">Youtube</a>
+                                <a href="?menu=book" class="list-group-item {% if selected_menu == 'book' %}active{% endif %}">書本</a>
+                                <a href="?menu=author" class="list-group-item {% if selected_menu == 'author' %}active{% endif %}">作者</a>
+                                <a href="?menu=publisher" class="list-group-item {% if selected_menu == 'publisher' %}active{% endif %}">出版商</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-sm-9 col-md-9">
+                    <div class="card">
+                        <div class ="card-header">
+                            {% block headmessage %}{% endblock headmessage %}
+                    </div>
+                    <div class ="card-body">
+                        {% block content %}
+                        {% endblock content %}
+                    </div>
+                    <div class ="card-footer">
+                        {% include "footer.html" %}
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <script src="" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            // JavaScript 代碼將在這裡添加
+        </script>
+    </body>
+</html>
