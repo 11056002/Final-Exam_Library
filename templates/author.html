@@ -7,11 +7,33 @@
 <a style='font-family:微軟正黑體;' href='/'>回首頁</a>
 {% endblock headmessage %} 
 {% block content %} 
-<p style='font-family:微軟正黑體;font-size:12pt;letter-spacing:2pt;'>
-    {{ author.tel | convert_markdown | safe }}</a>
-    <br>
-    <strong>ISBN:</strong> {{ author.sex }}<br>
-    <strong>譯者:</strong> {{ author.age }}<br>
-</p>
+<section class="page-section bg-light" id="team">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">作者們</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <!-- author.img -->
+                    <p class="text-muted">{{ author.img | convert_markdown | safe }}
+
+                    <!--   
+                    <img class="mx-auto rounded-circle" src="static/assets/img/team/1.jpg" alt="..." />
+                    -->
+                    
+                    <!-- author.name -->
+                    <h4 class="my-3">author.name</h4> 
+                    <!-- author.sex --><!-- author.age -->
+                    <p class="text-muted"><strong>性別:</strong> {{ author.sex }}</p>
+                    <p class="text-muted"><strong>年齡:</strong> {{ author.age }}</p>
+                    
+                    <!-- author.tel -->
+                    <a class="btn btn-dark btn-social mx-2" href=author.tel  aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}
 <!DOCTYPE html>

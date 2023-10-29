@@ -7,14 +7,32 @@
 <a style='font-family:微軟正黑體;' href='/'>回首頁</a>
 {% endblock headmessage %} 
 {% block content %} 
-<p style='font-family:微軟正黑體;font-size:12pt;letter-spacing:2pt;'>
-    {{ book.img_and_con | convert_markdown | safe }}</a>
+<section class="page-section" id="services">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">熱門書籍</h2>
+            <h3 class="section-subheading text-muted"></h3>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <!-- book.img -->
+                <p class="text-muted">{{ book.img | convert_markdown | safe }}
+                </p>
+                <h4 class="my-3">book.name</h4> 
+                <p class="text-muted">
+                    <strong>簡介:</strong> {{ book.con }}<br>
+                    <strong>ISBN:</strong> {{ book.ISBN }}<br>
+                    <strong>譯者:</strong> {{ book.translator }}<br>
+                    <strong>出版日期:</strong> {{ book.date }}<br>
+                    <strong>出版商:</strong> {{ book.publisher }}<br>
+                    <strong>狀態:</strong> {{ book.status }}<br>
+                </p>
+            </div>
+        </div>
+    </div>
     <br>
-    <strong>ISBN:</strong> {{ book.ISBN }}<br>
-    <strong>譯者:</strong> {{ book.translator }}<br>
-    <strong>出版日期:</strong> {{ book.date }}<br>
-    <strong>出版商:</strong> {{ book.publisher }}<br>
-    <strong>狀態:</strong> {{ book.status }}<br>
-</p>
+    <br>
+    <a class="newbutton" href="#services">查看更多書籍</a>
+</section>
 {% endblock content %}
 <!DOCTYPE html>

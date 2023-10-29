@@ -1,27 +1,24 @@
 {% extends "base2.html" %}
 {% block title %}歡迎光臨我的部落格{% endblock title %}
-{% block headmessage %} <h3 style='font-family:標楷體;'>本站文章列表</h3> {% endblock headmessage %} 
-{% block content %} 
-{% load static %}
-<script src="{% static 'js/min.js' %}"></script>
-
+{% block headmessage %} <h3 style='font-family:標楷體;'>本站文章列表</h3> {% endblock headmessage %}
+{% block content %}
 {% if selected_menu == "book" %}
     <h2>書本列表</h2>
-    {% for book in books %}
+    {% for article in articles %}
         <div class='card'>
             <div class='card-header'>
                 <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-                    <a href='/book/{{ book.name }}'>{{ book.name }}</a>
+                    <a href='/book/{{ article.name }}'>{{ article.name }}</a>
                 </p>
             </div>
             <div class='card-body' style='background-color:#F0E209'>
                 <p>
-                    {{ book.img_and_con | truncatechars:40 }}
+                    {{ article.img_and_con | truncatechars:40 }}
                 </p>
             </div>
             <div class='card-footer' style='background-color:#efefef'>
                 <p>
-                    发布时间：{{ book.date | date:"Y M d" }}
+                    發布時間：{{ article.date | date:"Y M d" }}
                 </p>
             </div>
         </div>
@@ -29,16 +26,16 @@
     {% endfor %}
 {% elif selected_menu == "author" %}
     <h2>作者列表</h2>
-    {% for author in authors %}
+    {% for article in articles %}
         <div class='card'>
             <div class='card-header'>
                 <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-                    <a href='/author/{{ author.name }}'>{{ author.name }}</a>
+                    <a href='/author/{{ article.name }}'>{{ article.name }}</a>
                 </p>
             </div>
             <div class='card-body' style='background-color:#F0E209'>
                 <p>
-                    {{ author.sex | truncatechars:40 }}
+                    {{ article.sex | truncatechars:40 }}
                 </p>
             </div>
         </div>
@@ -46,30 +43,20 @@
     {% endfor %}
 {% elif selected_menu == "publisher" %}
     <h2>出版商列表</h2>
-    {% for publisher in publishers %}
+    {% for article in articles %}
         <div class='card'>
             <div class='card-header'>
                 <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-                    <a href='/publisher/{{ publisher.name }}'>{{ publisher.name }}</a>
+                    <a href='/publisher/{{ article.name }}'>{{ article.name }}</a>
                 </p>
             </div>
             <div class='card-body' style='background-color:#F0E209'>
                 <p>
-                    {{ publisher.addr | truncatechars:40 }}
+                    {{ article.addr | truncatechars:40 }}
                 </p>
             </div>
         </div>
         <br>
     {% endfor %}
 {% endif %}
-
-
-
-<style>
-  body {
-    background-image: url("{% static 'images/bk.gif' %}");
-    /* 其他背景相關屬性（如background-size, background-repeat等）可以在這裡添加 */
-  }
-</style>
-
 {% endblock content %}

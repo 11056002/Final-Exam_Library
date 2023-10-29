@@ -1,47 +1,8 @@
 <!-- header.html --> 
 {% load static %}
-<head>
-    <link href="static/css/titleSetting.css" rel="stylesheet" type="text/css" />
-</head>
-<div class='well'>
-    <img src="{% static "images/1500x500.jpg" %}" height="500" width="100%" style="display: block; margin: 0 auto;">
-</div>
-
-<div style="display: flex; align-items: center;">
-
-    <img src="{% static "images/logo.png" %}" height="100">    
-    
-    <h1 class="title"
-    style="font-family: 'cwTeXYen', sans-serif;
-            color: red; font-size: 50px; 
-            margin-left: 10px; 
-            text-shadow: 3px 3px 3px #2f2f2f;
-            writing-mode: horizontal-tb;">
-        <b><spu><I>大圖書館的牧羊人</I></spu></b>
-    </h1>
-<div>
-    <table border="0" width="900" height="150">
-        <tbody>
-            <tr>
-                <td width="50%"></td>
-                <td width="30%"></td>
-                <td width="20%">
-                    <button>
-                        <a href="top.htm" target="right">HOME</a>
-                    </button>
-                </td>
-                <td width="20%">
-                    <button>
-                        <a href="top.htm" target="right">BORROW</a>
-                    </button>
-                </td>
-        </tbody>
-    </table>
-</div>    
-</div>
-
-<hr 
-    size="8px" 
-    align="center" 
-    width="100%" 
-    style="border-color: rgb(34, 48, 178); border-width: 10px;">
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">歡迎來到大圖書館的牧羊人</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#services">查看熱門書籍</a>
+    </div>
+</header>

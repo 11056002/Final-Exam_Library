@@ -1,24 +1,19 @@
 from django.contrib import admin
-from mysite.models import Post, Publisher, Book, Author, LmsUser
-
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'pub_date')
+from .models import Publisher, Book1, Author, LmssUser
 
 class PublisherAdmin(admin.ModelAdmin):
-    list_display = ('name', 'addr')
+    list_display = ('name', 'img', 'addr')  # 调整列表显示顺序
 
-class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('name', 'sex', 'age', 'tel')
+class Autho1rAdmin(admin.ModelAdmin):
+    list_display = ('name', 'author_img', 'sex', 'age', 'tel')  # 调整列表显示顺序
 
-class BookAdmin(admin.ModelAdmin):
-    list_display = ('name', 'img_and_con', 'ISBN', 'translator', 'date', 'publisher','status')
+class Book1Admin(admin.ModelAdmin):
+    list_display = ('name', 'book_img', 'book_con', 'ISBN', 'translator', 'date', 'publisher', 'status')  # 调整列表显示顺序
 
-class LmsUserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'password', 'email', 'mobile')
+class LmssUserAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'phone', 'password')  # 调整列表显示顺序
 
-admin.site.register(Post, PostAdmin)
 admin.site.register(Publisher, PublisherAdmin)
-admin.site.register(Author, AuthorAdmin)
-admin.site.register(Book, BookAdmin)
-admin.site.register(LmsUser, LmsUserAdmin)
-
+admin.site.register(Author, Autho1rAdmin)
+admin.site.register(Book1, Book1Admin)
+admin.site.register(LmssUser, LmssUserAdmin)

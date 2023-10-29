@@ -20,7 +20,6 @@ from mysite import views as mv
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',mv.homepage,name="homepage"),
-    path('post/<slug:slug>/',mv.showpost,),
     path('book/', mv.showbook, name='book'),
     path('publisher/', mv.showbook, name='book'),
     path('author/', mv.showbook, name='book'),

@@ -7,7 +7,33 @@
 <a style='font-family:微軟正黑體;' href='/'>回首頁</a>
 {% endblock headmessage %} 
 {% block content %} 
-<p style='font-family:微軟正黑體;font-size:12pt;letter-spacing:2pt;'>
-    {{ publisher.addr | convert_markdown | safe }}</a></p>
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">出版商</h2>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- publisher-->
+                    <div class="portfolio-item">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <!--  publisher img -->
+                            <p class="text-muted">{{ publisher.img | convert_markdown | safe }}
+                        </a>
+                        <div class="portfolio-caption">
+                            <!--  publisher name -->
+                            <div class="portfolio-caption-heading">publisher.name</div>
+                            <p class="text-muted">
+                                <strong>簡介:</strong> {{ publisher.addr }}<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </section>
 {% endblock content %}
 <!DOCTYPE html>
