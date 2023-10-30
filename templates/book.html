@@ -1,6 +1,6 @@
 {% extends "base2.html" %}
 {% load markdown_extras %}
-<link href="static/css/styles.css" rel="stylesheet" />
+<link href="/static/css/styles.css" rel="stylesheet" />
 {% block title %} {{ book.name }} - 文學天地 {% endblock title %}
 {% block headmessage %} 
 <h3 style='font-family:微軟正黑體;'>{{ book.name }}</h3>
@@ -18,7 +18,7 @@
                 <!-- book.img -->
                 <p class="text-muted">{{ book.img | convert_markdown | safe }}
                 </p>
-                <h4 class="my-3">book.name</h4> 
+                <h4 class="my-3">{{book.name}}</h4> 
                 <p class="text-muted">
                     <strong>簡介:</strong> {{ book.con }}<br>
                     <strong>ISBN:</strong> {{ book.ISBN }}<br>
