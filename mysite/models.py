@@ -2,7 +2,7 @@ from django.db import models
 
 # 出版商
 class Publisher(models.Model):
-    img = models.ImageField(upload_to='publishers/', null=True, blank=True)  # 使用ImageField存储出版商照片
+    img = models.TextField()
     name = models.CharField(max_length=64)  # 名稱
     addr = models.CharField(max_length=64)  # 地址
 
@@ -11,18 +11,17 @@ class Publisher(models.Model):
 
 # 作者分類
 class Author(models.Model):
-    author_img = models.ImageField(upload_to='authors/', null=True, blank=True)  # 使用ImageField儲存作者照片
+    author_img = models.TextField()
     name = models.CharField(max_length=64)  # 姓名
     sex = models.CharField(max_length=4)  # 性別
     age = models.IntegerField(default=0)  # 年齡
     tel = models.CharField(max_length=64)  # 聯絡方式(twitter)
-
     def __str__(self):
         return self.name
 
 # 書籍分類
 class Book1(models.Model):
-    book_img = models.ImageField(upload_to='books/', null=True, blank=True)  # 使用ImageField儲存書籍照片
+    book_img = models.TextField()
     name = models.CharField(max_length=64, null=True)  # 名稱
     book_con = models.TextField()  # 簡介
     ISBN = models.CharField(max_length=64)  # 編號

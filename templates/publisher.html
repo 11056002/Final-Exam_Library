@@ -1,12 +1,12 @@
 {% extends "base2.html" %}
 {% load markdown_extras %}
-
-{% block title %} {{ publisher.name }} - 文學天地 {% endblock title %}
-{% block headmessage %} 
+<link href="/static/css/styles.css" rel="stylesheet" />
+{% block title %} {{ publisher.name }} - 牧羊人 {% endblock title %}
+{% block headmessage2 %} 
 <h3 style='font-family:微軟正黑體;'>{{ publisher.name }}</h3>
 <a style='font-family:微軟正黑體;' href='/'>回首頁</a>
-{% endblock headmessage %} 
-{% block content %} 
+{% endblock headmessage2 %} 
+{% block content2 %} 
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
             <div class="text-center">
@@ -22,6 +22,7 @@
                             </div>
                             <!--  publisher img -->
                             <p class="text-muted">{{ publisher.img | convert_markdown | safe }}
+
                         </a>
                         <div class="portfolio-caption">
                             <!--  publisher name -->
@@ -35,5 +36,5 @@
             </div>
         </div>
     </section>
-{% endblock content %}
+{% endblock content2 %}
 <!DOCTYPE html>

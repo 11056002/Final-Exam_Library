@@ -1,62 +1,73 @@
 {% extends "base2.html" %}
+{% load markdown_extras %}
 {% block title %}歡迎光臨我的部落格{% endblock title %}
-{% block headmessage %} <h3 style='font-family:標楷體;'>本站文章列表</h3> {% endblock headmessage %}
+{% block headmessage %} <h3 style='font-family:標楷體; text-align: center;'>本站文章列表</h3> {% endblock headmessage %}
 {% block content %}
-{% if selected_menu == "book" %}
     <h2>書本列表</h2>
-    {% for article in articles %}
-        <div class='card'>
-            <div class='card-header'>
-                <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-                    <a href='/book/{{ article.name }}'>{{ article.name }}</a>
-                </p>
+        {% for book in books %}
+        <div class='card mx-auto'>
+                <div class='card-header'>
+                    <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
+                        <a href='/book/{{ book.name }}'>{{ book.name }}</a>
+                    </p>
+                </div>
+                <div class='card-body' style='background-color:#F0E209'>
+                    <p class="text-muted">
+                        <p class="text-muted">{{ book.book_img  | convert_markdown | safe }}  </p>
+                        <strong>簡介:</strong> {{ book.book_con  }}<br>
+                        <strong>ISBN:</strong> {{ book.ISBN }}<br>
+                        <strong>譯者:</strong> {{ book.translator }}<br>
+                        <strong>出版日期:</strong> {{ book.date }}<br>
+                        <strong>出版商:</strong> {{ book.publisher }}<br>
+                        <strong>狀態:</strong> {{ book.status }}<br>
+                    </p>
+                </div>
+                <div class='card-footer' style='background-color:#efefef'>
+                    <p>
+                        發布時間：{{ book.date | date:"Y M d" }}
+                    </p>
+                </div>
             </div>
-            <div class='card-body' style='background-color:#F0E209'>
-                <p>
-                    {{ article.img_and_con | truncatechars:40 }}
-                </p>
+            <br>
+        {% endfor %}
+    {% endblock content %}
+    {% block content1 %}
+        <h2>作者列表</h2>
+        {% for author in authors %}
+            <div class='card'>
+                <div class='card-header'>
+                    <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
+                        <a href='/author/{{ author.name }}'>{{ author.name }}</a>
+                    </p>
+                </div>
+                <p class="text-muted">{{ author.author_img  | convert_markdown | safe }}  </p>
+                <div class='card-body' style='background-color:#F0E209'>
+
+                    <p>
+                        {{ author.sex | truncatechars:40 }}
+                    </p>
+                </div>
             </div>
-            <div class='card-footer' style='background-color:#efefef'>
-                <p>
-                    發布時間：{{ article.date | date:"Y M d" }}
-                </p>
+            <br>
+        {% endfor %}
+    {% endblock content1 %} 
+    {% block content2 %}
+        <h2>出版商列表</h2>
+        {% for publisher in publishers %}
+            <div class='card'>
+                <div class='card-header'>
+                    <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
+                        <a href='/publisher/{{ publisher.name }}'>{{ publisher.name }}</a>
+                    </p>
+                </div>
+                <p class="text-muted">{{ publisher.img  | convert_markdown | safe }}  </p>
+                <div class='card-body' style='background-color:#F0E209'>
+                    <p>
+                        {{ publisher.addr | truncatechars:40 }}
+                    </p>
+                </div>
             </div>
-        </div>
-        <br>
-    {% endfor %}
-{% elif selected_menu == "author" %}
-    <h2>作者列表</h2>
-    {% for article in articles %}
-        <div class='card'>
-            <div class='card-header'>
-                <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-                    <a href='/author/{{ article.name }}'>{{ article.name }}</a>
-                </p>
-            </div>
-            <div class='card-body' style='background-color:#F0E209'>
-                <p>
-                    {{ article.sex | truncatechars:40 }}
-                </p>
-            </div>
-        </div>
-        <br>
-    {% endfor %}
-{% elif selected_menu == "publisher" %}
-    <h2>出版商列表</h2>
-    {% for article in articles %}
-        <div class='card'>
-            <div class='card-header'>
-                <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-                    <a href='/publisher/{{ article.name }}'>{{ article.name }}</a>
-                </p>
-            </div>
-            <div class='card-body' style='background-color:#F0E209'>
-                <p>
-                    {{ article.addr | truncatechars:40 }}
-                </p>
-            </div>
-        </div>
-        <br>
-    {% endfor %}
-{% endif %}
-{% endblock content %}
+            <br>
+    
+        {% endfor %}
+    {% endblock content2 %} 

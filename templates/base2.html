@@ -46,45 +46,6 @@
                     <a class="btn btn-primary btn-xl text-uppercase" href="#services">查看熱門書籍</a>
                 </div>
             </header>
-            <div class ="row">
-                <div class = "col-sm-3 col-md-3">
-                    <div class ="card">
-                        <div class ="card-header">
-
-                            <h3>菜單</h3>         
-                        </div>
-                        <div class="card-body">
-                            <div class="list-group">
-                                <a href = "/" class="list-group-item">HOME</a>
-                                <a href = "https://news.google.com/" class="list-group-item">Google</a>
-                                <a href = "https://www.youtube.com/" class="list-group-item">Youtube</a>
-                                <a href="?menu=book" class="list-group-item {% if selected_menu == 'book' %}active{% endif %}">書本</a>
-                                <a href="?menu=author" class="list-group-item {% if selected_menu == 'author' %}active{% endif %}">作者</a>
-                                <a href="?menu=publisher" class="list-group-item {% if selected_menu == 'publisher' %}active{% endif %}">出版商</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class = "col-sm-9 col-md-9">
-                    <div class="card">
-                        <div class ="card-header">
-                            {% block headmessage %}{% endblock headmessage %}
-                    </div>
-                    <div class ="card-body">
-                        {% block content %}
-                        {% endblock content %}
-                    </div>
-                    <footer class="footer py-4">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <!--這裡塞時間-->
-                                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-                </div>
-            </div>
         </div>
         <!-- ---------------------------------------------------------- -->
         <!-- 書籍放置地方 book.html -->
@@ -97,7 +58,7 @@
                 <div class="row text-center">
                     <div class="col-md-4">
                         <!-- book.img -->
-                            <img src="static/assets/img/portfolio/getImage.jpeg">
+                            <img src="https://cdn.akamai.steamstatic.com/steam/apps/1144400/capsule_616x353_tchinese.jpg?t=1686806109">
                         <!-- book.name -->
                         <h4 class="my-3">我推的孩子</h4>
                         <!-- book.con -->
@@ -111,25 +72,59 @@
                                 <br>
                             </p>
                     </div>
-
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Web Security</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Web Security</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
                 </div>
             </div>
             <br>
             <br>
             <a class="newbutton" href="#services">查看更多書籍</a>
         </section>
+        <div class = "col-sm-12 mx-auto ">
+            <div class="card">
+                <div class ="card-header">
+                    {% block headmessage %}{% endblock headmessage %}
+            </div>
+            <div class ="card-body">
+                {% block content %}
+                {% endblock content %}
+            </div>
+            <footer class="footer py-4">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!--這裡塞時間-->
+                        <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
         <!-- 以上完book.html -->
          <!-- 作者放置的地方 -->
          <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">作者們</h2>
+                    <h2 class="section-heading text-uppercase">熱門作者</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
                             <!-- author.img -->
-                            <img class="mx-auto rounded-circle" src="static/assets/img/team/1.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="https://cdn.akamai.steamstatic.com/steam/apps/1144400/capsule_616x353_tchinese.jpg?t=1686806109" alt="..." />
                             <!-- author.name -->
                             <h4>Parveen Anand</h4>
                             <!-- author.sex --><!-- author.age -->
@@ -138,14 +133,50 @@
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="static/assets/img/team/2.jpg" alt="..." />
+                            <h4>Diana Petersen</h4>
+                            <p class="text-muted">Lead Marketer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
+                          </div>
+                    </div>
+                   
+                     <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="static/assets/img/team/2.jpg" alt="..." />
+                            <h4>Diana Petersen</h4>
+                            <p class="text-muted">Lead Marketer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
+                          </div>
+                    </div>
+                     
                 </div>
             </div>
         </section>
-
+        <div class = "col-sm-9 col-md-9">
+            <div class="card">
+                <div class ="card-header">
+                    {% block headmessage1 %}{% endblock headmessage1 %}
+            </div>
+            <div class ="card-body">
+                {% block content1 %}
+                {% endblock content1 %}
+            </div>
+            <footer class="footer py-4">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!--這裡塞時間-->
+                        <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">出版商</h2>
+                    <h2 class="section-heading text-uppercase">主要出版商</h2>
                     <br>
                 </div>
                 <div class="row">
@@ -157,7 +188,7 @@
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
                                 <!--  publisher img -->
-                                <img class="img-fluid" src="static/assets/img/portfolio/1.jpg" alt="..." />
+                                <img class="img-fluid" src="https://cdn.akamai.steamstatic.com/steam/apps/1144400/capsule_616x353_tchinese.jpg?t=1686806109" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <!--  publisher name -->
@@ -165,9 +196,58 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="static/assets/img/portfolio/2.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Explore</div>
+                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="static/assets/img/portfolio/2.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Explore</div>
+                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <div class = "col-sm-9 col-md-9">
+            <div class="card">
+                <div class ="card-header">
+                    {% block headmessage2 %}{% endblock headmessage2 %}
+            </div>
+            <div class ="card-body">
+                {% block content2 %}
+                {% endblock content2 %}
+            </div>
+            <footer class="footer py-4">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!--這裡塞時間-->
+                        <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
          <!-- 以上完publisher.html -->
         <!-- 借閱單 這要表單-->
         <section class="page-section" id="contact">
