@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
                 <!-- book.img -->
-                <div class="col-lg-6">
+            <div class="col-lg-6">
                 <p class="text-muted text-start">{{ book.book_img  | convert_markdown | safe }}  
                 </p>
                 <div class="text-end">
@@ -24,9 +24,10 @@
                         <strong>狀態:</strong> {{ book.status }}<br>
                     </p>
                 </div>
-                <div class="col-lg-6">
-                    <strong class="text-end h3">目錄:</strong><br>{{ book.book_con2 }}<br>
-                </div>
+            </div>
+            <div class="col-lg-6">
+                <strong class="text-end h3">內容:</strong><br><br><br>{{ book.book_con2 }}<br>
+            </div>
                 </div>
             </div>
         </div>
