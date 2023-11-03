@@ -11,18 +11,22 @@
     <div class="container">
         <div class="row">
                 <!-- book.img -->
+                <div class="col-lg-6">
                 <p class="text-muted text-start">{{ book.book_img  | convert_markdown | safe }}  
                 </p>
                 <div class="text-end">
                     <h4 class="my-3">{{book.name}}</h4> 
                     <p class="text-muted">
-                        <p class="text-muted">{{ book.book_con  | convert_markdown | safe }}
                         <strong>ISBN:</strong> {{ book.ISBN }}<br>
                         <strong>譯者:</strong> {{ book.translator }}<br>
                         <strong>出版日期:</strong> {{ book.date }}<br>
                         <strong>出版商:</strong> {{ book.publisher }}<br>
                         <strong>狀態:</strong> {{ book.status }}<br>
                     </p>
+                </div>
+                <div class="col-lg-6">
+                    <strong class="text-end h3">目錄:</strong><br>{{ book.book_con2 }}<br>
+                </div>
                 </div>
             </div>
         </div>
