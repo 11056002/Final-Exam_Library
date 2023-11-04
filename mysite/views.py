@@ -1,10 +1,20 @@
 from django.shortcuts import render, redirect
 from mysite.models import Book1, Publisher, Author
+
 def homepage(request):
-    books = Book1.objects.all()
-    authors = Author.objects.all()
-    publishers = Publisher.objects.all()
-    return render(request, 'index.html', locals())
+    selected_menu = request.GET.get('menu', 'default')  # 默认显示书本
+    if selected_menu == 'book':
+        articles = Book1.objects.all()
+    elif selected_menu == 'author':
+        articles = Author.objects.all()
+    elif selected_menu == 'publisher':
+        articles = Publisher.objects.all()
+    elif selected_menu == 'default':
+        articles = Publisher.objects.all()
+    else:
+        return redirect("/")  # 处理无效的MENU选项，直接重定向到首页
+    return render(request, 'index.html', {'selected_menu': selected_menu, 'articles': articles})
+
 def showbook(request, book_name="None"):
     try:
         book = Book1.objects.get(name=book_name)
