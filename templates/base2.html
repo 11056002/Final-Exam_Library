@@ -19,9 +19,11 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/static/css/styles.css" rel="stylesheet" />
+        
     </head>
     <body id="page-top">
         <!-- 這是最上面的導覽-->
+
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,9 +59,9 @@
         <!-- ---------------------------------------------------------- -->
         {% block hotcontent %}
         {% endblock hotcontent %}
-
+        <hr style="border-width:10px;">
         <section id="transmit">
-        <div class = "col-sm-9 mx-auto">
+        <div class = "col-sm-8 mx-auto">
             <div class="card">
                 <div class ="card-header">
                     {% block headmessage %}{% endblock headmessage %}
