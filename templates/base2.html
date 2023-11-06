@@ -37,11 +37,11 @@
                         <a href="?menu=author" class="list-group-item {% if selected_menu == 'author' %}active{% endif %}">作者</a>
                         <a href="?menu=publisher" class="list-group-item {% if selected_menu == 'publisher' %}active{% endif %}">出版商</a>
                         -->
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=default#services">首頁</a></li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=book#services">熱門書籍</a></li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=author#services">作者</a></li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=publisher#services">出版商</a></li>            
-                        <li class="nav-item"><a class="nav-link" href="#contact">借書</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=default#main">首頁</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=book#book">熱門書籍</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=author#author">作者</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=publisher#publisher">出版商</a></li>            
+                        <li class="nav-item"><a class="nav-link" href="#contactForm">借書</a></li>
                       </ul>
                 </div>
             </div>
@@ -57,9 +57,12 @@
         </div>
 
         <!-- ---------------------------------------------------------- -->
+        <div class='card-body' style='background-color:#f6ffc546'>
         {% block hotcontent %}
         {% endblock hotcontent %}
+        </div>
         <hr style="border-width:10px;">
+        <div class='card-body' style='background-color:#f6ffc546'>
         <section id="transmit">
         <div class = "col-sm-8 mx-auto">
             <div class="card">
@@ -81,6 +84,7 @@
             </footer>
         </div>
     </section>
+</div>
         <!-- 借閱單 這要表單-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -141,7 +145,6 @@
                 </form>
             </div>
         </section>
-        <!-- 目前工作太忙 這東西太累-->
         <!-- Footer 這裡塞footer-->
         <footer class="footer py-4">
             <div class="container">

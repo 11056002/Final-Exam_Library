@@ -3,10 +3,10 @@
 {% block title %}歡迎光臨本館{% endblock title %}
 {% block headmessage %} <h3 style='font-family:標楷體; text-align: center;'>相關列表</h3> {% endblock headmessage %}
 {% block hotcontent %}
-<div class='card-body' style='background-color:#f6ffc546'>
+
     
 {% if selected_menu == "book" %}
-<section class="page-section" id="services">
+<section class="page-section" id="book">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">熱門書籍</h2>
@@ -60,7 +60,7 @@
     <a class="newbutton" href="#transmit">查看更多書籍</a>
 </section>
 {% elif selected_menu == "author" %}
-<section class="page-section bg-light" id="services">
+<section class="page-section" id="author">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">熱門作者</h2>
@@ -84,23 +84,23 @@
                     <h4>新海城</h4>
                     <p class="text-muted">作者</p>
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                  </div>
+                </div>
             </div>
-           
-             <div class="col-lg-4">
+        
+            <div class="col-lg-4">
                 <div class="team-member">
                     <img class="mx-auto rounded-circle" src="https://img.ltn.com.tw/Upload/news/600/2015/05/11/107.jpg" alt="..." />
                     <h4>J. K. 羅琳</h4>
                     <p class="text-muted">作者</p>
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
     <a class="newbutton" href="#transmit">查看更多作者</a>
 </section>
 {% elif selected_menu == "publisher" %}
-<section class="page-section bg-light" id="services">
+<section class="page-section" id="publisher">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">主要出版商</h2>
@@ -110,7 +110,7 @@
             <div class="col-lg-4 col-sm-6 mb-4">
                 <!-- publisher-->
                 <div class="portfolio-item">
-                      <!--  publisher img -->
+                    <!--  publisher img -->
                         <img class="img-fluid" src="https://s3cdn.yourator.co/companies/logos/000/001/938/thumb/40b69368e8e7d30a24a4b3304b3fe945dc97786e.png"/>
                     </a>
                     <div class="portfolio-caption">
@@ -122,7 +122,7 @@
             <div class="col-lg-4 col-sm-6 mb-4">
                 
                 <div class="portfolio-item">
-                       <img class="img-fluid" src="https://scontent.ftpe3-1.fna.fbcdn.net/v/t39.30808-1/305128014_509026374558818_3822540510499830702_n.jpg?stp=c80.0.200.200a_dst-jpg_p200x200&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=hPkGLUDBBecAX-qoqOL&_nc_ht=scontent.ftpe3-1.fna&oh=00_AfBecOqTOjGy3isHRxoZuXH4KwrSEnTDfQOUHU-FC7huIA&oe=65480E1E" alt="..." />
+                    <img class="img-fluid" src="https://scontent.ftpe3-1.fna.fbcdn.net/v/t39.30808-1/305128014_509026374558818_3822540510499830702_n.jpg?stp=c80.0.200.200a_dst-jpg_p200x200&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=hPkGLUDBBecAX-qoqOL&_nc_ht=scontent.ftpe3-1.fna&oh=00_AfBecOqTOjGy3isHRxoZuXH4KwrSEnTDfQOUHU-FC7huIA&oe=65480E1E" alt="..." />
                     </a>
                     <div class="portfolio-caption">
                         <div class="portfolio-caption-heading">皇冠文化出版有限公司</div>
@@ -142,6 +142,7 @@
         </div>
     </div>
     <a class="newbutton" href="#transmit">查看更多出版商</a>
+</div>
 </section>
 {% elif selected_menu == "default" %}
 <br>
@@ -168,7 +169,6 @@
                         <a href='/book/{{ book.name }}#transmit'>{{ book.name }}</a>
                     </p>
                 </div>
-                <div class='card-body' style='background-color:#f6ffc546'>
                     <div class='row'>
                         <div class='col-lg-6'>
                             <p class="text-muted">
@@ -229,18 +229,14 @@
             <br>
         {% endfor %}
 {% elif selected_menu == "default" %}
-<section id="services">
+<section id="service">
     <div class="top-frame-wrap">
         <div class='card-body' style='background-color:#f6ffc546'>
         <div class="top-frame-cell2">
-            <div style="text-align:center">
-                <p class="info_yuzu"><a href="https://www.youtube.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png" alt="Youtube" style="width: 60%; height: 40%;"></a></p>
-            </div>
-            <div style="text-align:center">
-                <p class="info_yuzu"><a href="https://www.google.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="Google" style="width: 60%; height: 40%;"></a></p>
-            </div>
-            <div style="text-align:center">
-                <p class="info_yuzu"><a href="http://www.facebook.com/u" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Facebook_Logo_%282019%29.svg/2560px-Facebook_Logo_%282019%29.svg.png" alt="Facebook" style="width: 60%; height: 40%;"></a></p>
+            <div style="text-align:center"><p class="info_yuzu"><a href="https://www.ntub.edu.tw/" target="_blank"><img src="https://www.yuzu-soft.com/images/top/ban_cien.jpg" alt="ntub"></a></p></div>
+            <div style="text-align:center"><p class="info_yuzu"><a href="https://www.youtube.com" target="_blank"><img src="https://www.yuzu-soft.com/images/top/banner_tube.jpg" alt="Youtube"></a></p></div>
+            <div style="text-align:center"><p class="info_yuzu"><a href="https://imd.ntub.edu.tw/" target="_blank"><img src="https://www.yuzu-soft.com/images/top/banner_blog01.jpg" alt="ntubimd"></a></p></div>
+            <div style="text-align:center"><p class="info_yuzu"><a href="https://www.facebook.com" target="_blank"><img src="https://www.yuzu-soft.com/images/top/ban_disco.jpg" alt="facebook"></a></p></div>
             </div>            
         </div>
     </div>
