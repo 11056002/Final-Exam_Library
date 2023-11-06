@@ -166,9 +166,10 @@
         <div class='card mx-auto'>
                 <div class='card-header'>
                     <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-                        <a href='/book/{{ book.name }}#transmit'>{{ book.name }}</a>
+                        <a href='/book/{{ book.name }}#transmit' style='color:purple;'>{{ book.name }}</a>
                     </p>
                 </div>
+                <div class='card-body' style='background-color:#f6ffc546'>
                     <div class='row'>
                         <div class='col-lg-6'>
                             <p class="text-muted">
@@ -201,7 +202,7 @@
             <div class='card mx-auto'>
                 <div class='card-header'>
                     <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-                        <a href='/author/{{ author.name }}#transmit'>{{ author.name }}</a>
+                        <a href='/author/{{ author.name }}#transmit' style='color:purple;'>{{ author.name }}</a>
                     </p>
                 </div>
                 <p class="text-muted">{{ author.author_img  | convert_markdown | safe }}  </p>
@@ -216,7 +217,7 @@
             <div class='card mx-auto'>
                 <div class='card-header'>
                     <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-                        <a href='/publisher/{{ publisher.name }}#transmit'>{{ publisher.name }}</a>
+                        <a href='/publisher/{{ publisher.name }}#transmit' style='color:purple;'>{{ publisher.name }}</a>
                     </p>
                 </div>
                 <p class="text-muted">{{ publisher.img  | convert_markdown | safe }}  </p>
