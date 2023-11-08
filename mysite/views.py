@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from mysite.models import Book1, Publisher, Author
 
 def homepage(request):
-    selected_menu = request.GET.get('menu', 'default')  # 默认显示书本
+    selected_menu = request.GET.get('menu', 'default')  # 默認顯示書本
     if selected_menu == 'book':
         articles = Book1.objects.all()
     elif selected_menu == 'author':
@@ -12,7 +12,7 @@ def homepage(request):
     elif selected_menu == 'default':
         articles = Publisher.objects.all()
     else:
-        return redirect("/")  # 处理无效的MENU选项，直接重定向到首页
+        return redirect("/")  # 處理無效的MENU選項，直接重定向到首頁
     return render(request, 'index.html', {'selected_menu': selected_menu, 'articles': articles})
 
 def showbook(request, book_name="None"):
