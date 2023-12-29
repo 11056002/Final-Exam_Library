@@ -17,14 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mysite import views as mv
+from library import views as lib
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',mv.homepage,name="homepage"),
-    path('default/', mv.showbook, name='book'),
-    path('book/', mv.showbook, name='book'),
-    path('publisher/', mv.showbook, name='book'),
-    path('author/', mv.showbook, name='book'),
-    path('book/<str:book_name>/', mv.showbook, name='book'),
-    path('publisher/<str:publisher_name>/', mv.showpublisher, name='publisher'),
-    path('author/<str:author_name>/', mv.showauthor, name='author'),
+    path('', mv.homepage, name="homepage"),
+    path('default/', mv.showbook, name='default'),  
+    path('book/', mv.showbook, name='show_book'),  
+    path('publisher/', mv.showpublisher, name='show_publisher'), 
+    path('author/', mv.showauthor, name='show_author'),  
+    path('book/<str:book_name>/', mv.showbook, name='show_book_detail'),  
+    path('publisher/<str:publisher_name>/', mv.showpublisher, name='show_publisher_detail'),  
+    path('author/<str:author_name>/', mv.showauthor, name='show_author_detail'),  
+    path('search_books/', mv.search_books, name='search_books')
 ]
+

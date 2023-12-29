@@ -23,29 +23,31 @@
     </head>
     <body id="page-top">
         <!-- 這是最上面的導覽-->
-
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
+                <div class="row">
+                    <form action="/search_books/" method="get" class="col-lg-8">
+                        <div class="form-group d-flex">
+                            <input type="text" class="form-control" id="keyword" name="keyword" placeholder="(在這裡輸入書名)">
+                        </div>
+                    </form>
+                    <div class="col-lg-4">
+                        <button type="submit" class="btn btn-primary" style="margin-left: 0.1%;">查詢</button>
+                    </div>
+                </div>
+                
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <!--
-                        <a href="?menu=book" class="list-group-item {% if selected_menu == 'book' %}active{% endif %}">書本</a>
-                        <a href="?menu=author" class="list-group-item {% if selected_menu == 'author' %}active{% endif %}">作者</a>
-                        <a href="?menu=publisher" class="list-group-item {% if selected_menu == 'publisher' %}active{% endif %}">出版商</a>
-                        -->
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=default#main">首頁</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=book#book">熱門書籍</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=author#author">作者</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=publisher#publisher">出版商</a></li>            
-                        <li class="nav-item"><a class="nav-link" href="#contactForm">借書</a></li>
-                      </ul>
+                        <li class="nav-item"><a class="nav-link" href="#contactForm">註冊/登入</a></li>
+                    </ul>
                 </div>
             </div>
-        </nav>      
+        </nav>
+        
     <body>
             <!-- 這裡header進入-->
             <header class="masthead">
