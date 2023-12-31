@@ -36,18 +36,6 @@ def showpublisher(request, publisher_name="None"):
     except Publisher.DoesNotExist:
         return redirect("/")  # 出版商不存在，重定向到首頁
     
-    
-def search_books(request):
-    if 'keyword' in request.GET:
-        search_query = request.GET.get('keyword', '')
-        books = Book1.objects.filter(name__icontains=search_query)
-        if not books:
-            return render(request, 'book_search_results.html', {'no_result': True})
-        else:
-            return render(request, 'book_search_results.html', {'books': books,})
-    else:
-        return render(request, 'N.html')
-
 def search_books(request):
     keyword = request.GET.get('keyword', '').strip()
 
