@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -22,20 +23,18 @@
         
     </head>
     <body id="page-top">
+        <script src="{% static 'js/scripts.js' %}"></script>
         <!-- 這是最上面的導覽-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <div class="row">
-                    <form action="/search_books/" method="get" class="col-lg-8">
+                    <form action="/search_books/" method="get" class="col">
                         <div class="form-group d-flex">
                             <input type="text" class="form-control" id="keyword" name="keyword" placeholder="(在這裡輸入書名)">
+                            <button type="submit" class="btn btn-primary ml-2" style="height: 38px; width:70px;">查詢</button>
                         </div>
                     </form>
-                    <div class="col-lg-4">
-                        <button type="submit" class="btn btn-primary" style="margin-left: 0.1%;">查詢</button>
-                    </div>
                 </div>
-                
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/?menu=default#main">首頁</a></li>
