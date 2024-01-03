@@ -97,11 +97,11 @@
     {% include "library/navbaradmin.html" %}
     <br>
     <br>
-<center><h3 style=" margin-bottom: 0px;"class = 'alert alert-success'>ISSUE BOOK TO STUDENT !</h3></center>
+<center><h3 style=" margin-bottom: 0px;"class = 'alert alert-success'>借閱書籍</h3></center>
     <div class="signup-form">
         <form  method="post" class="form-horizontal">
 
-    			<center><h2>ISSUE BOOK TO STUDENT</h2></center>
+    			<center><h2>借閱書籍</h2></center>
 
 {% csrf_token %}
 
@@ -117,16 +117,16 @@
 
     		<div class="form-group">
     			<div class="col-xs-8 col-xs-offset-4">
-            <button type="submit" class="btn btn-primary btn-lg">ISSUE</button>
+            <button type="submit" class="btn btn-primary btn-lg">借閱</button>
     			</div>
     		</div>
         </form>
-    	<div class="text-center">View Issued Book to Student  <a href="viewissuedbook">Click here</a></div>
+    	<div class="text-center">查看正借閱中的書籍  <a href="viewissuedbook">按這裡</a></div>
     </div>
 
 
 
-
+	<br><br><br><br><br><br><br><br>
     {% include "library/footer.html" %}
   </body>
 </html>

@@ -97,11 +97,11 @@
     {% include "library/navbaradmin.html" %}
     <br>
     <br>
-<center><h3 style=" margin-bottom: 0px;"class = 'alert alert-success'>ADD BOOK IN LIBRARY !</h3></center>
+
     <div class="signup-form">
         <form  method="post" class="form-horizontal">
 
-    			<center><h2>ADD BOOK IN LIBRARY</h2></center>
+    			<center><h2>新增書籍</h2></center>
 
 {% csrf_token %}
 
@@ -117,16 +117,16 @@
 
     		<div class="form-group">
     			<div class="col-xs-8 col-xs-offset-4">
-            <button type="submit" class="btn btn-primary btn-lg">ADD</button>
+            <button type="submit" class="btn btn-primary btn-lg">新增</button>
     			</div>
     		</div>
         </form>
-    	<div class="text-center">View Available Book In Library<a href="viewbook">Click here</a></div>
+    	<div class="text-center">查看正借閱中的書籍<a href="viewbook">點這裡</a></div>
     </div>
 
 
 
-
+    <br><br><br><br>
     {% include "library/footer.html" %}
   </body>
 </html>

@@ -8,10 +8,6 @@ class ContactusForm(forms.Form):
     Message = forms.CharField(max_length=500,widget=forms.Textarea(attrs={'rows': 3, 'cols': 30}),label="回饋意見")
 
 
-
-
-
-
 class StudentUserForm(forms.ModelForm):
     class Meta:
         model=User
@@ -26,6 +22,7 @@ class BookForm(forms.ModelForm):
     class Meta:
         model=models.Book
         fields=['name','isbn','author','category']
+        
 class IssuedBookForm(forms.Form):
     #to_field_name value will be stored when form is submitted.....__str__ method of book model will be shown there in html
     isbn2=forms.ModelChoiceField(queryset=models.Book.objects.all(),empty_label="Name and isbn", to_field_name="isbn",label='Name and Isbn')

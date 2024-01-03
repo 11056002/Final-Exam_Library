@@ -58,15 +58,15 @@ border-radius: 5px;
     {% include "library/navbaradmin.html" %}
     <br>
     <br>
-    <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 50px;text-align:center;'>Available Book in Library !</h3>
+    <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 50px;text-align:center;'>正在館內的書籍</h3>
 {% if books%}
 <table class="redTable">
 <thead>
 <tr>
-<th>Book Name</th>
+<th>書籍名稱</th>
 <th>ISBN</th>
-<th>Author</th>
-<th>Category</th>
+<th>作者</th>
+<th>書籍種類</th>
 </tr>
 </thead>
 <tfoot>
@@ -88,11 +88,11 @@ border-radius: 5px;
 </tbody>
 </table>
 {%else%}
-<h1>Have 0 book</h1>
+<h1>剩餘 0 本</h1>
 {%endif%}
 
 
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     {% include "library/footer.html" %}
   </body>
 </html>

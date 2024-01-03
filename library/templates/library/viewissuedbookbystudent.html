@@ -61,7 +61,7 @@ border-radius: 5px;
   </head>
   <body>
   {% include "library/navbarstudent.html" %}<br><br>
-  <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 50px;text-align:center;'>Book Issued To You !</h3>
+  <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 50px;text-align:center;'>你的已借閱書籍</h3>
 
 <div class="row">
 
@@ -70,11 +70,11 @@ border-radius: 5px;
     <table class="redTable">
   <thead>
   <tr>
-  <th>Name</th>
-  <th>Enrollment</th>
-  <th>Branch</th>
-    <th>Book Name</th>
-      <th>Book Author</th>
+  <th>姓名</th>
+  <th>使用者身分</th>
+  <th>使用者姓名</th>
+  <th>書籍姓名</th>
+  <th>書籍作者</th>
   </tr>
   </thead>
   <tfoot>
@@ -105,11 +105,11 @@ border-radius: 5px;
       <table class="redTable">
     <thead>
     <tr>
-    <th>Issue Date</th>
-    <th>Expiry Date</th>
-    <th>Fine</th>
-    <th>Status</th>
-    <th>Action</th>
+    <th>借閱日期</th>
+    <th>還書截止日</th>
+    <th>罰款</th>
+    <th>狀態</th>
+    <th>是否還書</th>
     </tr>
     </thead>
     <tfoot>
@@ -125,13 +125,13 @@ border-radius: 5px;
   <td>  {{t.0}}</td>
   <td>  {{t.1}}</td>
   <td>  {% if t.3 == "Returned" %}
-    No Fine
+    沒有罰款
     {% else %}
     {{t.2}}
   {% endif %}</td>
   <td>  {{t.3}}</td>
   <td>{% if t.3 == "Issued" %}
-    <button onclick="location.href='{% url 'returnbook' t.4 %}'"; type="button">Return</button>
+    <button onclick="location.href='{% url 'returnbook' t.4 %}'"; type="button">返回</button>
   {% endif %}</td>
   
 
@@ -145,18 +145,14 @@ border-radius: 5px;
     </tbody>
     </table>
     {%else%}
-    <h1> No book Issued to you</h1>
+    <h1>目前沒有借閱中的書籍</h1>
     {%endif%}
 
 </div></div>
 
-
-
-
-
-
-<br><br><br><br><br><br>
-<br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
   {% include "library/footer.html" %}
   </body>
 </html>

@@ -61,15 +61,15 @@ border-radius: 5px;
     {% include "library/navbaradmin.html" %}
     <br>
     <br>
-    <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 50px;text-align:center;'>Student registered in Library !</h3>
+    <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 50px;text-align:center;'>已註冊的使用者</h3>
 
     {% if students%}
 <table class="redTable">
 <thead>
 <tr>
-<th>Name</th>
-<th>Enrollment</th>
-<th>Branch</th>
+<th>姓名</th>
+<th>使用者序號</th>
+<th>使用者名稱</th>
 </tr>
 </thead>
 <tfoot>
@@ -92,14 +92,14 @@ border-radius: 5px;
 </tbody>
 </table>
 {%else%}
-<h1> No Student Registered in Library</h1>
+<h1> 目前沒有已註冊的使用者</h1>
 {%endif%}
 
 
 
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br>
-
-<br><br><br>
   {% include "library/footer.html" %}
   </body>
 </html>
