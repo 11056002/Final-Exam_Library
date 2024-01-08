@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required,user_passes_test
 from datetime import datetime,timedelta,date
 from django.core.mail import send_mail
 from Mid_Exam_Library.settings import EMAIL_HOST_USER
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def home_view(request):
@@ -87,6 +88,22 @@ def addbook_view(request):
             user=form.save()
             return render(request,'library/bookadded.html')
     return render(request,'library/addbook.html',{'form':form})
+
+@login_required(login_url='adminlogin')
+@user_passes_test(is_admin)
+def deletebook_view(request):
+    if request.method == 'POST':
+        book_id_to_remove = request.POST.get('book_id')  # 假設有一個 input 隱藏欄位傳遞 book_id
+        try:
+            book_to_remove = models.Book.objects.get(id=book_id_to_remove)
+            book_to_remove.delete()
+            return render(request, 'library/bookremoved.html')  # 可以是移除成功的提示頁面
+        except ObjectDoesNotExist:
+            return render(request, 'library/book_not_found.html')  # 可以是書籍不存在的錯誤提示頁面
+
+    else:
+        books = models.Book.objects.all()  # 獲取所有書籍，用於在模板中顯示
+        return render(request, 'library/deletebook.html', {'books': books})
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)

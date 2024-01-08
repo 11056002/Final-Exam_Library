@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sumit</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,9 +12,9 @@
 
 
     <style type="text/css">
-    	body {
+    	body{
     		color: #aa082e;
-    		background: #c5acb0;
+    		background-color: : #b6bde7 !important;
     		font-family: 'Roboto', sans-serif;
     	}
         .form-control {
@@ -96,36 +97,25 @@
     {% include "library/navbaradmin.html" %}
     <br>
     <br>
-<center><h3 style=" margin-bottom: 0px;"class = 'alert alert-success'>借閱書籍</h3></center>
+
     <div class="signup-form">
         <form  method="post" class="form-horizontal">
-
-    			<center><h2>借閱書籍</h2></center>
-
-{% csrf_token %}
-
-            {% for field in form %}
-            <div class="form-group">
-              <label class="control-label col-xs-4">{{ field.label_tag }}</label>
-              <div class="col-xs-8">
-              {{ field }}
-               </div>
-            </div>
-            {% endfor %}
-
-
-    		<div class="form-group">
-    			<div class="col-xs-8 col-xs-offset-4">
-            <button type="submit" class="btn btn-primary btn-lg">借閱</button>
-    			</div>
-    		</div>
+            {% csrf_token %}
+            <label for="book_id">選擇要刪除的書籍：</label>
+            <select name="book_id" id="book_id">
+                {% for book in books %}
+                    <option value="{{ book.id }}">{{ book.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">刪除</button>
         </form>
-    	<div class="text-center">查看正借閱中的書籍  <a href="viewissuedbook">按這裡</a></div>
+        
+    	<div class="text-center">查看正借閱中的書籍<a href="viewbook">點這裡</a></div>
     </div>
 
 
 
-	<br><br><br><br><br><br><br><br>
+    <br><br><br><br>
     {% include "library/footer.html" %}
   </body>
 </html>
