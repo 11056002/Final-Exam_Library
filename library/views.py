@@ -129,6 +129,18 @@ def issuebook_view(request):
             return render(request,'library/bookissued.html')
     return render(request,'library/issuebook.html',{'form':form})
 
+@login_required(login_url='studentlogin')
+def borrowbook_view(request):
+    form = forms.IssuedBookForm()
+    if request.method == 'POST':
+        form = forms.IssuedBookForm(request.POST)
+        if form.is_valid():
+            obj = models.IssuedBook()
+            obj.enrollment = request.POST.get('enrollment2')
+            obj.isbn = request.POST.get('isbn2')
+            obj.save()
+            return render(request, 'library/bookissued.html')
+    return render(request, 'library/issuebook.html', {'form': form})
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
