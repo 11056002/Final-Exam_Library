@@ -223,3 +223,27 @@ def contactus_view(request):
             send_mail(str(name)+' || '+str(email),message, EMAIL_HOST_USER, ['11056025@ntub.edu.tw'], fail_silently = False)  #信箱要改
             return render(request, 'library/contactussuccess.html')
     return render(request, 'library/contactus.html', {'form':sub})
+
+@login_required(login_url='studentlogin')
+def issuebook_studen_view(request):
+    student = request.user.id
+
+
+    default_values = {
+        'enrollment2': student if student else '', 
+    }
+
+    # Create the form with initial data
+    form = forms.IssuedBookForm(initial=default_values)
+
+    if request.method == 'POST':
+        # Now this form has data from HTML
+        form = forms.IssuedBookForm(request.POST)
+        if form.is_valid():
+            obj = models.IssuedBook()
+            obj.enrollment = request.POST.get('enrollment2')
+            obj.isbn = request.POST.get('isbn2')
+            obj.save()
+            return render(request, 'library/viewissuedbookbystudent.html')
+
+    return render(request, 'library/issuebook_studen.html', {'form': form})
